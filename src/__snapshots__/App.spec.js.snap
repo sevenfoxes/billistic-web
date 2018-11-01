@@ -3,8 +3,6 @@
 exports[`App should render without crashing 1`] = `
 <React.Fragment>
   <WithStyles(CssBaseline) />
-  <div>
-    And now we're cooking with gas
-  </div>
+  <Header />
 </React.Fragment>
 `;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render without crashing 1`] = `
+<div
+  className="site_header"
+>
+  <WithStyles(AppBar)
+    position="static"
+  >
+    <WithStyles(Toolbar)>
+      <WithStyles(IconButton)
+        aria-label="Menu"
+        color="inherit"
+      >
+        <pure(MenuIcon) />
+      </WithStyles(IconButton)>
+      <h1
+        className="site_header__title"
+      >
+        Billistic
+      </h1>
+      <WithStyles(Button)
+        color="inherit"
+      >
+        Login
+      </WithStyles(Button)>
+    </WithStyles(Toolbar)>
+  </WithStyles(AppBar)>
+</div>
+`;

@@ -1,14 +1,13 @@
 import React from "react"
 import CssBaseline from '@material-ui/core/CssBaseline'
 import "./app.scss"
+import { Header } from "./components/Header"
 
 export const App = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <div>
-        And now we're cooking with gas
-      </div>
+      <Header />
     </React.Fragment>
   )
 }
