@@ -4,7 +4,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "test": "",
+    "test": "jest",
     "test:watch": "jest --watch",
     "lint": "",
     "e2e": ""
@@ -25,11 +25,10 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.3.1",
-    "babel-eslint": "^10.0.1",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
-    "babel-preset-react-app": "^6.0.0",
-    "babel-register": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.4.1",
     "css-loader": "^1.0.1",
@@ -42,16 +41,25 @@
     "faker": "^4.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.9.4",
     "postcss-loader": "^3.0.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-test-renderer": "^16.6.0",
+    "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss|sass|less)$": "identity-obj-proxy"
+    }
   }
 }
