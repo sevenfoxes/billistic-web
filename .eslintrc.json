@@ -25,6 +25,16 @@
         "exports": "always-multiline",
         "functions": "ignore"
       }
+    ],
+    "react/no-unescaped-entities": [
+      "error",
+      {
+        "forbid": [
+          ">",
+          "<",
+          "&"
+        ]
+      }
     ]
   }
 }
