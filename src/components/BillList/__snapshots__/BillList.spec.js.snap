@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BillList should render without crashing 1`] = `
+<Unknown
+  bill={
+    Object {
+      "amount": "$1000.00",
+      "due": 17,
+      "name": "someone",
+      "paid": false,
+    }
+  }
+  pay={[Function]}
+/>
+`;

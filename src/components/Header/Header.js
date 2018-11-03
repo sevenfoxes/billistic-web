@@ -11,7 +11,7 @@ export const Header = () => {
 
   return (
     <div className="site_header">
-      <AppBar position="static">
+      <AppBar position="static" color="default" elevation={0}>
         <Toolbar>
           <IconButton color="inherit" aria-label="Menu">
             <MenuIcon />

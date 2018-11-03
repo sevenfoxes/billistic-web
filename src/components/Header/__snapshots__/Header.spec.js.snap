@@ -5,6 +5,8 @@ exports[`Header should render without crashing 1`] = `
   className="site_header"
 >
   <WithStyles(AppBar)
+    color="default"
+    elevation={0}
     position="static"
   >
     <WithStyles(Toolbar)>
