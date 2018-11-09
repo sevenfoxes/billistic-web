@@ -31,15 +31,6 @@ module.exports = {
           loader: "babel-loader",
         },
       },
-      {
-        test: /\.pug$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: { minimize: true },
-          },
-        ],
-      },
     ],
   },
   plugins: [
