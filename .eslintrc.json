@@ -35,6 +35,9 @@
           "&"
         ]
       }
+    ],
+    "react/prop-types": [
+      false
     ]
   }
 }

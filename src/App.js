@@ -26,7 +26,7 @@ export const App = () => {
         <CssBaseline />
         <Header />
         <section className="app">
-          <BillList />
+          <BillList siteTitle="a prop from the parent" />
         </section>
       </React.Fragment>
     </MuiThemeProvider>

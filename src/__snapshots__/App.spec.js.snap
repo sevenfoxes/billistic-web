@@ -404,7 +404,9 @@ exports[`App should render without crashing 1`] = `
     <section
       className="app"
     >
-      <withState(Component) />
+      <withState(billList)
+        siteTitle="a prop from the parent"
+      />
     </section>
   </React.Fragment>
 </MuiThemeProvider>
