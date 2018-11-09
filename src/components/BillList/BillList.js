@@ -26,7 +26,7 @@ export const BillList = enhance(({ bill, pay }) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell padding="checkbox">paid</TableCell>
+            <TableCell>paid</TableCell>
             <TableCell>Biller</TableCell>
             <TableCell numeric>Amount</TableCell>
             <TableCell numeric>Due</TableCell>
@@ -34,7 +34,7 @@ export const BillList = enhance(({ bill, pay }) => {
         </TableHead>
         <TableBody>
           <TableRow>
-            <TableCell padding="checkbox">
+            <TableCell>
               <Checkbox checked={bill.paid} onChange={() => pay(handleMarkPaid)} />
             </TableCell>
             <TableCell component="th" scope="row">{bill.name}</TableCell>
