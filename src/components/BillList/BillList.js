@@ -13,7 +13,7 @@ import Checkbox from '@material-ui/core/Checkbox'
 
 const handleMarkPaid = bill => ({ ...bill, paid: !bill.paid })
 
-export const billList = ({ bill, pay, siteTitle }) => (
+const billList = ({ bill, pay, siteTitle }) => (
   <Paper>
     <Table>
       <TableHead>
