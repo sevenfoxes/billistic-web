@@ -10,7 +10,6 @@ import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import Checkbox from '@material-ui/core/Checkbox'
 
-
 const handleMarkPaid = bill => ({ ...bill, paid: !bill.paid })
 
 const billList = ({ bill, pay, siteTitle }) => (
