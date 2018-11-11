@@ -8,7 +8,6 @@ import blueGrey from '@material-ui/core/colors/blueGrey'
 import { Header } from "./components/Header"
 import { BillList } from "./components/BillList"
 
-
 const theme = createMuiTheme({
   palette: {
     primary: blueGrey,

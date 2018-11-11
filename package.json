@@ -17,7 +17,9 @@
     "react-cookies": "^0.1.0",
     "react-redux": "^5.1.0",
     "redux": "^4.0.1",
-    "reselect": "^4.0.0"
+    "redux-observable": "^1.0.0",
+    "reselect": "^4.0.0",
+    "rxjs": "^6.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
