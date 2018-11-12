@@ -21,6 +21,7 @@
     "react-redux": "^5.1.0",
     "react-redux-firebase": "^2.2.1",
     "redux": "^4.0.1",
+    "redux-firestore": "^0.5.8",
     "redux-observable": "^1.0.0",
     "reselect": "^4.0.0",
     "rxjs": "^6.3.3"
