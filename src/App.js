@@ -5,8 +5,8 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import deepOrange from '@material-ui/core/colors/deepOrange'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 
-import { Header } from "./components/Header"
-import { BillList } from "./components/BillList"
+import { Header } from "./features/Header"
+import { BillList } from "./features/Bills/BillList"
 
 const theme = createMuiTheme({
   palette: {
