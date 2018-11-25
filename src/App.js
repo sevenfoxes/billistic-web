@@ -1,3 +1,4 @@
+import './favicon.ico'
 import React from "react"
 import CssBaseline from '@material-ui/core/CssBaseline'
 import "./app.scss"
@@ -25,7 +26,7 @@ export const App = () => {
         <CssBaseline />
         <Header />
         <section className="app">
-          <BillList siteTitle="a prop from the parent" />
+          <BillList />
         </section>
       </React.Fragment>
     </MuiThemeProvider>

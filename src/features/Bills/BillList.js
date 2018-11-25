@@ -1,6 +1,6 @@
 import React from "react"
 import "./bill_list.scss"
-import { compose, withState } from "recompose"
+import { compose } from "recompose"
 
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -10,9 +10,23 @@ import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import Checkbox from '@material-ui/core/Checkbox'
 
+import { firestoreConnect } from 'react-redux-firebase'
+import { connect } from 'react-redux'
+
 // const handleMarkPaid = bill => ({ ...bill, paid: !bill.paid })
 
-const billList = ({ expenses, togglePaid }) => (
+const Expense = ({ expense }) => (
+  <TableRow>
+    <TableCell>
+      <Checkbox checked={expense.paid} />
+    </TableCell>
+    <TableCell component="th" scope="row">{expense.name}</TableCell>
+    <TableCell numeric>{expense.amount}</TableCell>
+    <TableCell numeric>{expense.due}</TableCell>
+  </TableRow>
+)
+
+const billList = ({ expenses }) => (
   <Paper>
     <Table>
       <TableHead>
@@ -24,30 +38,23 @@ const billList = ({ expenses, togglePaid }) => (
         </TableRow>
       </TableHead>
       <TableBody>
-        <TableRow>
-          <TableCell>
-            <Checkbox checked={expenses.paid} onChange={togglePaid} />
-          </TableCell>
-          <TableCell component="th" scope="row">{expenses.name}</TableCell>
-          <TableCell numeric>{expenses.amount}</TableCell>
-          <TableCell numeric>{expenses.due}</TableCell>
-        </TableRow>
+        {!expenses ? (<TableRow><TableCell>Not loaded</TableCell></TableRow>) : expenses.map(expense => (<Expense expense={expense} key={expense} />))}
       </TableBody>
     </Table>
   </Paper>
 )
 
+const mapStateToProps = ({ firestore }) => ({
+  expenses: firestore.ordered.expenses,
+})
+
+const mapDispatchToProps = {}
+
 export const BillList = compose(
-  withState('expenses', 'pay', {
-    name: 'someone',
-    amount: "$1000.00",
-    due: 17,
-    paid: false,
-  }),
-  // withHandlers({
-  //   togglePaid: ({ firebase, expense, id }) => () =>
-  //     firebase.update(`expense/${id}`, { paid: !expense.paid }),
-  //   deleteExpense: ({ firebase, expenses, id }) => () =>
-  //     firebase.remove(`expense/${id}`),
-  // })
+  connect(mapStateToProps, mapDispatchToProps),
+  firestoreConnect(() => ([
+    {
+      collection: 'expenses',
+    },
+  ]))
 )(billList)

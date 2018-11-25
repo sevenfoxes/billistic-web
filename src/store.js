@@ -1,43 +1,34 @@
-import { createStore, compose } from 'redux'
-// import logger from 'redux-logger'
-import rootReducer from './ducks/root'
-import rootEpic from './epics/root'
-import { createEpicMiddleware } from 'redux-observable'
-import firebase from "firebase/app"
-import { firebase as firebaseConfig } from '../firebase_config'
-import { reactReduxFirebase } from 'react-redux-firebase'
-import { reduxFirestore } from 'redux-firestore'
-import 'firebase/auth'
-import 'firebase/database'
+import { createStore, compose, combineReducers } from 'redux'
+
+import firebase from 'firebase/app'
+import { reactReduxFirebase, firebaseReducer } from 'react-redux-firebase'
+import { reduxFirestore, firestoreReducer } from 'redux-firestore'
+
+import reducer from './ducks'
 import 'firebase/firestore'
 
+import { config } from '../firebase_config'
 
-const epicMiddleware = createEpicMiddleware()
+const rrConfig = {
+  userProfile: 'users',
+  useFirestoreForProfile: true,
+}
 
+firebase.initializeApp(config)
+firebase.firestore()
+firebase.firestore().settings({ timestampsInSnapshots: true })
 
-export default function configureStore() {
-  firebase.initializeApp(firebaseConfig)
+const reducers = combineReducers({
+  reducer,
+  firebase: firebaseReducer,
+  firestore: firestoreReducer,
+})
 
-  const rrfConfig = {
-    logErrors: true,
-  }
-
-  const createStoreWithMiddleware = compose(
-    reactReduxFirebase(firebase, rrfConfig),
+export const store = createStore(
+  reducers,
+  compose(
+    reactReduxFirebase(firebase, rrConfig),
     reduxFirestore(firebase),
     typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
-  )(createStore)
-
-  const store = createStoreWithMiddleware(rootReducer)
-
-  if (module.hot) {
-    module.hot.accept('./reducer', () => {
-      const nextRootReducer = require('./reducer')
-      store.replaceReducer(nextRootReducer)
-    })
-  }
-
-  epicMiddleware.run(rootEpic)
-
-  return store
-}
+  )
+)

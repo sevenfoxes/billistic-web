@@ -16,6 +16,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.ico$/,
+        loader: 'file-loader?name=[name].[ext]',
+      },
+      {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
