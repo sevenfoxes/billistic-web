@@ -1,32 +1,49 @@
 import React from "react"
 import { BillList } from "./BillList"
-import ShallowRenderer from "react-test-renderer/shallow"
-import configureStore from 'redux-mock-store' //ES6 modules
+import renderer from 'react-test-renderer'
+import configureStore from 'redux-mock-store'
+import { update } from 'lodash/fp'
+import { Provider } from 'react-redux'
 
 describe('BillList', () => {
-  let initialState, store, firestore, mockStore
-
-  beforeEach(() => {
-    mockStore = configureStore([])
-
-    firestore = {
+  const initialState = {
+    firestore: {
       ordered: {
         expenses: [
           {
+            name: 'bank',
+            paid: false,
+            amount: 20,
+            due: 20,
           },
         ],
       },
-    }
+    },
+  }
+  const mockStore = configureStore()
+  let store
 
-    initialState = {
-      firestore,
-    }
-
+  beforeEach(() => {
     store = mockStore(initialState)
   })
 
   it('should render without crashing', () => {
-    const tree = new ShallowRenderer().render(<BillList store={store} />)
+    const tree = renderer.create(<Provider store={store}><BillList /></Provider>)
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render a new line for each expense', () => {
+    const moreState = update('firestore.ordered.expenses', e => ([
+      ...e,
+      {
+        name: 'not bank',
+        paid: true,
+        amount: 20000,
+        due: 1,
+      },
+    ]), initialState)
+    store = mockStore(moreState)
+    const tree = renderer.create(<Provider store={store}><BillList /></Provider>)
     expect(tree).toMatchSnapshot()
   })
 })

@@ -38,23 +38,15 @@ const billList = ({ expenses }) => (
         </TableRow>
       </TableHead>
       <TableBody>
-        {!expenses ? (<TableRow><TableCell>Not loaded</TableCell></TableRow>) : expenses.map(expense => (<Expense expense={expense} key={expense} />))}
+        {!expenses ? (<TableRow><TableCell>Not loaded</TableCell></TableRow>) : expenses.map((expense, i) => (<Expense expense={expense} key={expense.name + i} />))}
       </TableBody>
     </Table>
   </Paper>
 )
 
-const mapStateToProps = ({ firestore }) => ({
-  expenses: firestore.ordered.expenses,
-})
-
-const mapDispatchToProps = {}
-
 export const BillList = compose(
-  connect(mapStateToProps, mapDispatchToProps),
-  firestoreConnect(() => ([
-    {
-      collection: 'expenses',
-    },
-  ]))
+  firestoreConnect(() => (['expenses'])),
+  connect(({ firestore }) => ({
+    expenses: firestore.ordered.expenses,
+  })),
 )(billList)

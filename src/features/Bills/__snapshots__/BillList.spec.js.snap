@@ -1,39 +1,307 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BillList should render a new line for each expense 1`] = `
+<div
+  className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2"
+>
+  <table
+    className="MuiTable-root-28"
+  >
+    <thead
+      className="MuiTableHead-root-29"
+    >
+      <tr
+        className="MuiTableRow-root-30 MuiTableRow-head-33"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36"
+          scope="col"
+        >
+          paid
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36"
+          scope="col"
+        >
+          Biller
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36 MuiTableCell-numeric-39"
+          scope="col"
+        >
+          Amount
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36 MuiTableCell-numeric-39"
+          scope="col"
+        >
+          Due
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root-43"
+    >
+      <tr
+        className="MuiTableRow-root-30"
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37"
+        >
+          <span
+            className="MuiButtonBase-root-60 MuiIconButton-root-54 MuiPrivateSwitchBase-root-50 MuiCheckbox-root-44 MuiCheckbox-colorSecondary-49"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={null}
+          >
+            <span
+              className="MuiIconButton-label-59"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-63"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                />
+              </svg>
+              <input
+                checked={false}
+                className="MuiPrivateSwitchBase-input-53"
+                data-indeterminate={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+            </span>
+            <span
+              className="MuiTouchRipple-root-72"
+            />
+          </span>
+        </td>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37"
+          scope="row"
+        >
+          bank
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+        >
+          20
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+        >
+          20
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root-30"
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37"
+        >
+          <span
+            className="MuiButtonBase-root-60 MuiIconButton-root-54 MuiPrivateSwitchBase-root-50 MuiCheckbox-root-44 MuiCheckbox-colorSecondary-49 MuiPrivateSwitchBase-checked-51 MuiCheckbox-checked-45"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={null}
+          >
+            <span
+              className="MuiIconButton-label-59"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-63"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                />
+              </svg>
+              <input
+                checked={true}
+                className="MuiPrivateSwitchBase-input-53"
+                data-indeterminate={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+            </span>
+            <span
+              className="MuiTouchRipple-root-72"
+            />
+          </span>
+        </td>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37"
+          scope="row"
+        >
+          not bank
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+        >
+          20000
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+        >
+          1
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`BillList should render without crashing 1`] = `
-<FirestoreConnect(billList)
-  expenses={
-    Array [
-      Object {},
-    ]
-  }
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
-  storeSubscription={
-    Subscription {
-      "listeners": Object {
-        "notify": [Function],
-      },
-      "onStateChange": [Function],
-      "parentSub": undefined,
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "unsubscribe": null,
-    }
-  }
-/>
+<div
+  className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2"
+>
+  <table
+    className="MuiTable-root-28"
+  >
+    <thead
+      className="MuiTableHead-root-29"
+    >
+      <tr
+        className="MuiTableRow-root-30 MuiTableRow-head-33"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36"
+          scope="col"
+        >
+          paid
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36"
+          scope="col"
+        >
+          Biller
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36 MuiTableCell-numeric-39"
+          scope="col"
+        >
+          Amount
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36 MuiTableCell-numeric-39"
+          scope="col"
+        >
+          Due
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root-43"
+    >
+      <tr
+        className="MuiTableRow-root-30"
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37"
+        >
+          <span
+            className="MuiButtonBase-root-60 MuiIconButton-root-54 MuiPrivateSwitchBase-root-50 MuiCheckbox-root-44 MuiCheckbox-colorSecondary-49"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={null}
+          >
+            <span
+              className="MuiIconButton-label-59"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-63"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                />
+              </svg>
+              <input
+                checked={false}
+                className="MuiPrivateSwitchBase-input-53"
+                data-indeterminate={false}
+                onChange={[Function]}
+                type="checkbox"
+              />
+            </span>
+            <span
+              className="MuiTouchRipple-root-72"
+            />
+          </span>
+        </td>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37"
+          scope="row"
+        >
+          bank
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+        >
+          20
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+        >
+          20
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
