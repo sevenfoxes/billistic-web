@@ -2,7 +2,7 @@
 
 exports[`BillList should render without crashing 1`] = `
 <billList
-  bill={
+  expenses={
     Object {
       "amount": "$1000.00",
       "due": 17,

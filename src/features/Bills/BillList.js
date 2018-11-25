@@ -1,7 +1,6 @@
 import React from "react"
 import "./bill_list.scss"
-import { compose, withHandlers } from "recompose"
-import { connect } from 'react-redux'
+import { compose, withState } from "recompose"
 
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -10,12 +9,11 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import Checkbox from '@material-ui/core/Checkbox'
-import { firebaseConnect, isLoaded } from "react-redux-firebase"
 
 // const handleMarkPaid = bill => ({ ...bill, paid: !bill.paid })
 
 const billList = ({ expenses, togglePaid }) => (
-  !isLoaded(expenses) ? 'Loading' : <Paper>
+  <Paper>
     <Table>
       <TableHead>
         <TableRow>
@@ -40,20 +38,16 @@ const billList = ({ expenses, togglePaid }) => (
 )
 
 export const BillList = compose(
-  firebaseConnect(() => [{ path: 'expenses' }]),
-  connect(({ firebase }) => ({
-    expenses: firebase.ordered.expenses,
-  })),
-  // withState('bill', 'pay', {
-  //   name: 'someone',
-  //   amount: "$1000.00",
-  //   due: 17,
-  //   paid: false,
-  // }),
-  withHandlers({
-    togglePaid: ({ firebase, expense, id }) => () =>
-      firebase.update(`expense/${id}`, { paid: !expense.paid }),
-    deleteExpense: ({ firebase, expenses, id }) => () =>
-      firebase.remove(`expense/${id}`),
-  })
+  withState('expenses', 'pay', {
+    name: 'someone',
+    amount: "$1000.00",
+    due: 17,
+    paid: false,
+  }),
+  // withHandlers({
+  //   togglePaid: ({ firebase, expense, id }) => () =>
+  //     firebase.update(`expense/${id}`, { paid: !expense.paid }),
+  //   deleteExpense: ({ firebase, expenses, id }) => () =>
+  //     firebase.remove(`expense/${id}`),
+  // })
 )(billList)
