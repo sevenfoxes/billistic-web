@@ -404,7 +404,7 @@ exports[`App should render without crashing 1`] = `
     <section
       className="app"
     >
-      <FirestoreConnect(Connect(billList)) />
+      <FirestoreConnect(Connect(withHandlers(billList))) />
     </section>
   </React.Fragment>
 </MuiThemeProvider>

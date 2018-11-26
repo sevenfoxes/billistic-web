@@ -1,6 +1,6 @@
 import React from "react"
 import "./bill_list.scss"
-import { compose } from "recompose"
+import { compose, withHandlers, withState } from "recompose"
 
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -13,20 +13,18 @@ import Checkbox from '@material-ui/core/Checkbox'
 import { firestoreConnect } from 'react-redux-firebase'
 import { connect } from 'react-redux'
 
-// const handleMarkPaid = bill => ({ ...bill, paid: !bill.paid })
-
-const Expense = ({ expense }) => (
-  <TableRow>
+const Expenses = ({ expenses, togglePaid }) => expenses.map(expense => (
+  <TableRow key={expense.id}>
     <TableCell>
-      <Checkbox checked={expense.paid} />
+      <Checkbox className="mark_paid" checked={expense.paid} onClick={() => togglePaid(expense.id, !expense.paid)} />
     </TableCell>
     <TableCell component="th" scope="row">{expense.name}</TableCell>
     <TableCell numeric>{expense.amount}</TableCell>
     <TableCell numeric>{expense.due}</TableCell>
   </TableRow>
-)
+))
 
-const billList = ({ expenses }) => (
+export const billList = ({ expenses, togglePaid }) => (
   <Paper>
     <Table>
       <TableHead>
@@ -38,15 +36,24 @@ const billList = ({ expenses }) => (
         </TableRow>
       </TableHead>
       <TableBody>
-        {!expenses ? (<TableRow><TableCell>Not loaded</TableCell></TableRow>) : expenses.map((expense, i) => (<Expense expense={expense} key={expense.name + i} />))}
+        {!expenses ? (<TableRow><TableCell>Not loaded</TableCell></TableRow>) : (<Expenses expenses={expenses} togglePaid={togglePaid} />)}
       </TableBody>
     </Table>
   </Paper>
 )
 
-export const BillList = compose(
+export const withExpenseHandlers = withHandlers({
+  togglePaid: ({ firestore }) => (id, paid = false) => firestore.update(`expenses/${id}`, { paid }),
+})
+
+export const withExpenseData = compose(
   firestoreConnect(() => (['expenses'])),
   connect(({ firestore }) => ({
     expenses: firestore.ordered.expenses,
-  })),
+  }))
+)
+
+export const BillList = compose(
+  withExpenseData,
+  withExpenseHandlers
 )(billList)
