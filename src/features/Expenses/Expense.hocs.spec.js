@@ -1,6 +1,6 @@
 import React from "react"
 import { MockComponent } from '../MockComponent'
-import { withExpenseHandlers, withExpenseData } from './Bill.hocs'
+import { withExpenseHandlers, withExpenseData } from './Expense.hocs'
 import Enzyme, { mount } from 'enzyme'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'

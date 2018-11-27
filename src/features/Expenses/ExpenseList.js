@@ -1,7 +1,7 @@
 import React from "react"
-import "./bill_list.scss"
+import "./expense_list.scss"
 import { compose } from "recompose"
-import { withExpenseHandlers, withExpenseData } from './Bill.hocs'
+import { withExpenseHandlers, withExpenseData } from './Expense.hocs'
 
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'

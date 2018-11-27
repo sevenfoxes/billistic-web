@@ -1,10 +1,10 @@
 import React from "react"
-import { AddBill } from "./AddBill"
+import { AddExpense } from "./AddExpense"
 import ShallowRenderer from "react-test-renderer/shallow"
 
-describe('AddBill', () => {
+describe('AddExpense', () => {
   it('should render fine', () => {
-    const tree = new ShallowRenderer().render(<AddBill />)
+    const tree = new ShallowRenderer().render(<AddExpense />)
     expect(tree).toMatchSnapshot()
   })
 })

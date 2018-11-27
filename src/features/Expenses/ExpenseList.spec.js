@@ -1,5 +1,5 @@
 import React from "react"
-import { BillList } from "./BillList"
+import { BillList } from "./ExpenseList"
 import renderer from 'react-test-renderer'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
