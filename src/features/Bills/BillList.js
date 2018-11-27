@@ -1,6 +1,7 @@
 import React from "react"
 import "./bill_list.scss"
-import { compose, withHandlers, withState } from "recompose"
+import { compose } from "recompose"
+import { withExpenseHandlers, withExpenseData } from './Bill.hocs'
 
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -9,9 +10,6 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import Checkbox from '@material-ui/core/Checkbox'
-
-import { firestoreConnect } from 'react-redux-firebase'
-import { connect } from 'react-redux'
 
 const Expenses = ({ expenses, togglePaid }) => expenses.map(expense => (
   <TableRow key={expense.id}>
@@ -40,17 +38,6 @@ export const billList = ({ expenses, togglePaid }) => (
       </TableBody>
     </Table>
   </Paper>
-)
-
-export const withExpenseHandlers = withHandlers({
-  togglePaid: ({ firestore }) => (id, paid = false) => firestore.update(`expenses/${id}`, { paid }),
-})
-
-export const withExpenseData = compose(
-  firestoreConnect(() => (['expenses'])),
-  connect(({ firestore }) => ({
-    expenses: firestore.ordered.expenses,
-  }))
 )
 
 export const BillList = compose(
