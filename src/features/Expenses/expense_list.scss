@@ -1,2 +1,9 @@
 @import '../../custom';
 
+.expense_list {
+  &-title {
+    padding: 24px 24px 10px 24px;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    background: #efefef;
+  }
+}

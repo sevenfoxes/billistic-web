@@ -2,41 +2,46 @@
 
 exports[`BillList should render a new line for each expense 1`] = `
 <div
-  className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2"
+  className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2 expense_list"
 >
+  <h2
+    className="MuiTypography-root-28 MuiTypography-h5-44 expense_list-title"
+  >
+    Expenses
+  </h2>
   <table
-    className="MuiTable-root-28"
+    className="MuiTable-root-63"
   >
     <thead
-      className="MuiTableHead-root-29"
+      className="MuiTableHead-root-64"
     >
       <tr
-        className="MuiTableRow-root-30 MuiTableRow-head-33"
+        className="MuiTableRow-root-65 MuiTableRow-head-68"
       >
         <th
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-head-36"
+          className="MuiTableCell-root-70 MuiTableCell-head-71"
           scope="col"
         >
           paid
         </th>
         <th
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-head-36"
+          className="MuiTableCell-root-70 MuiTableCell-head-71"
           scope="col"
         >
           Biller
         </th>
         <th
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-head-36 MuiTableCell-numeric-39"
+          className="MuiTableCell-root-70 MuiTableCell-head-71 MuiTableCell-numeric-74"
           scope="col"
         >
           Amount
         </th>
         <th
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-head-36 MuiTableCell-numeric-39"
+          className="MuiTableCell-root-70 MuiTableCell-head-71 MuiTableCell-numeric-74"
           scope="col"
         >
           Due
@@ -44,17 +49,17 @@ exports[`BillList should render a new line for each expense 1`] = `
       </tr>
     </thead>
     <tbody
-      className="MuiTableBody-root-43"
+      className="MuiTableBody-root-78"
     >
       <tr
-        className="MuiTableRow-root-30"
+        className="MuiTableRow-root-65"
       >
         <td
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-body-37"
+          className="MuiTableCell-root-70 MuiTableCell-body-72"
         >
           <span
-            className="MuiButtonBase-root-60 MuiIconButton-root-54 MuiPrivateSwitchBase-root-50 MuiCheckbox-root-44 MuiCheckbox-colorSecondary-49 mark_paid"
+            className="MuiButtonBase-root-95 MuiIconButton-root-89 MuiPrivateSwitchBase-root-85 MuiCheckbox-root-79 MuiCheckbox-colorSecondary-84 mark_paid"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -69,11 +74,11 @@ exports[`BillList should render a new line for each expense 1`] = `
             tabIndex={null}
           >
             <span
-              className="MuiIconButton-label-59"
+              className="MuiIconButton-label-94"
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-63"
+                className="MuiSvgIcon-root-98"
                 focusable="false"
                 role="presentation"
                 viewBox="0 0 24 24"
@@ -84,46 +89,46 @@ exports[`BillList should render a new line for each expense 1`] = `
               </svg>
               <input
                 checked={false}
-                className="MuiPrivateSwitchBase-input-53"
+                className="MuiPrivateSwitchBase-input-88"
                 data-indeterminate={false}
                 onChange={[Function]}
                 type="checkbox"
               />
             </span>
             <span
-              className="MuiTouchRipple-root-72"
+              className="MuiTouchRipple-root-107"
             />
           </span>
         </td>
         <th
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-body-37"
+          className="MuiTableCell-root-70 MuiTableCell-body-72"
           scope="row"
         >
           bank
         </th>
         <td
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+          className="MuiTableCell-root-70 MuiTableCell-body-72 MuiTableCell-numeric-74"
         >
           20
         </td>
         <td
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+          className="MuiTableCell-root-70 MuiTableCell-body-72 MuiTableCell-numeric-74"
         >
           20
         </td>
       </tr>
       <tr
-        className="MuiTableRow-root-30"
+        className="MuiTableRow-root-65"
       >
         <td
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-body-37"
+          className="MuiTableCell-root-70 MuiTableCell-body-72"
         >
           <span
-            className="MuiButtonBase-root-60 MuiIconButton-root-54 MuiPrivateSwitchBase-root-50 MuiCheckbox-root-44 MuiCheckbox-colorSecondary-49 MuiPrivateSwitchBase-checked-51 MuiCheckbox-checked-45 mark_paid"
+            className="MuiButtonBase-root-95 MuiIconButton-root-89 MuiPrivateSwitchBase-root-85 MuiCheckbox-root-79 MuiCheckbox-colorSecondary-84 MuiPrivateSwitchBase-checked-86 MuiCheckbox-checked-80 mark_paid"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -138,11 +143,11 @@ exports[`BillList should render a new line for each expense 1`] = `
             tabIndex={null}
           >
             <span
-              className="MuiIconButton-label-59"
+              className="MuiIconButton-label-94"
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-63"
+                className="MuiSvgIcon-root-98"
                 focusable="false"
                 role="presentation"
                 viewBox="0 0 24 24"
@@ -153,33 +158,33 @@ exports[`BillList should render a new line for each expense 1`] = `
               </svg>
               <input
                 checked={true}
-                className="MuiPrivateSwitchBase-input-53"
+                className="MuiPrivateSwitchBase-input-88"
                 data-indeterminate={false}
                 onChange={[Function]}
                 type="checkbox"
               />
             </span>
             <span
-              className="MuiTouchRipple-root-72"
+              className="MuiTouchRipple-root-107"
             />
           </span>
         </td>
         <th
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-body-37"
+          className="MuiTableCell-root-70 MuiTableCell-body-72"
           scope="row"
         >
           not bank
         </th>
         <td
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+          className="MuiTableCell-root-70 MuiTableCell-body-72 MuiTableCell-numeric-74"
         >
           20000
         </td>
         <td
           aria-sort={null}
-          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-numeric-39"
+          className="MuiTableCell-root-70 MuiTableCell-body-72 MuiTableCell-numeric-74"
         >
           1
         </td>
