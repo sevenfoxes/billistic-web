@@ -1,3 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddExpense should render fine 1`] = `<WithStyles(Paper) />`;
+exports[`AddExpense should render fine 1`] = `
+<div>
+  <WithStyles(Button)>
+    Open Modal
+  </WithStyles(Button)>
+  <WithStyles(Modal)
+    aria-describedby="simple-modal-description"
+    aria-labelledby="simple-modal-title"
+  >
+    <div>
+      testing 123
+    </div>
+  </WithStyles(Modal)>
+</div>
+`;

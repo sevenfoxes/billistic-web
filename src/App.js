@@ -6,7 +6,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import deepOrange from '@material-ui/core/colors/deepOrange'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 
-import { Header } from "./features/Header"
+import AppHeader from "./features/Header"
 import { BillList } from "./features/Expenses/ExpenseList"
 
 const theme = createMuiTheme({
@@ -24,7 +24,7 @@ export const App = () => {
     <MuiThemeProvider theme={theme}>
       <React.Fragment>
         <CssBaseline />
-        <Header />
+        <AppHeader />
         <section className="app">
           <BillList />
         </section>

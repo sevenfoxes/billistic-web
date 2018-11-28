@@ -5,7 +5,7 @@ exports[`Header should render without crashing 1`] = `
   className="site_header"
 >
   <WithStyles(AppBar)
-    color="default"
+    color="primary"
     elevation={0}
     position="static"
   >
@@ -21,12 +21,37 @@ exports[`Header should render without crashing 1`] = `
       >
         Billistic
       </h1>
-      <WithStyles(Button)
+      <WithStyles(IconButton)
         color="inherit"
       >
-        Login
-      </WithStyles(Button)>
+        <pure(AddCircleIcon) />
+      </WithStyles(IconButton)>
     </WithStyles(Toolbar)>
   </WithStyles(AppBar)>
+  <WithStyles(Drawer)
+    anchor="left"
+    variant="temporary"
+  >
+    <div>
+      <WithStyles(IconButton)>
+        <pure(ChevronLeftIcon) />
+      </WithStyles(IconButton)>
+    </div>
+    <WithStyles(Divider) />
+    <WithStyles(List)>
+      <WithStyles(ListItem)
+        button={true}
+      >
+        <WithStyles(ListItemIcon)>
+          <pure(AddCircleIcon)
+            fontSize="large"
+          />
+        </WithStyles(ListItemIcon)>
+        <WithStyles(ListItemText)
+          primary="Add Item"
+        />
+      </WithStyles(ListItem)>
+    </WithStyles(List)>
+  </WithStyles(Drawer)>
 </div>
 `;
