@@ -53,5 +53,8 @@ exports[`Header should render without crashing 1`] = `
       </WithStyles(ListItem)>
     </WithStyles(List)>
   </WithStyles(Drawer)>
+  <WithStyles(Modal)>
+    <WithStyles(withStateHandlers(NewItemModal)) />
+  </WithStyles(Modal)>
 </div>
 `;

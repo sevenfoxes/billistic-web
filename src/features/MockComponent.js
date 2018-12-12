@@ -1,7 +1,7 @@
-import React, { Component } from "react"
+import { Component } from "react"
 
 export class MockComponent extends Component {
   render() {
-    return <div />
+    return null
   }
 }

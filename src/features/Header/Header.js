@@ -2,7 +2,6 @@ import React from "react"
 import "./header.scss"
 
 import AppBar from '@material-ui/core/AppBar'
-import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -15,9 +14,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import AddIcon from '@material-ui/icons/AddCircle'
 import { compose, withState, withHandlers } from "recompose"
+import { NewItemModal, withModalState } from '../Modal'
+import { Modal } from "@material-ui/core"
 
 
-export const Header = ({ open, toggleDrawerHandler }) => (
+export const Header = ({ open, toggleDrawerHandler, openModal, closeModal, showModal }) => (
   <div className="site_header">
     <AppBar position="static" color="primary" elevation={0}>
       <Toolbar>
@@ -27,7 +28,7 @@ export const Header = ({ open, toggleDrawerHandler }) => (
         <h1 className="site_header__title">
           Billistic
         </h1>
-        <IconButton color="inherit">
+        <IconButton onClick={openModal} color="inherit">
           <AddIcon />
         </IconButton>
       </Toolbar>
@@ -55,11 +56,15 @@ export const Header = ({ open, toggleDrawerHandler }) => (
         ))}
       </List>
     </Drawer>
+    <Modal open={showModal} onClose={closeModal}>
+      <NewItemModal />
+    </Modal>
   </div>
 )
 
 export default compose(
   withState('open', 'setOpen', false),
+  withModalState,
   withHandlers({
     toggleDrawerHandler: ({ open, setOpen }) => () => setOpen(!open),
   })

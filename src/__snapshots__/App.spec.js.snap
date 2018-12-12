@@ -400,7 +400,7 @@ exports[`App should render without crashing 1`] = `
 >
   <React.Fragment>
     <WithStyles(CssBaseline) />
-    <withState(withHandlers(Header)) />
+    <withState(withStateHandlers(withHandlers(Header))) />
     <section
       className="app"
     >
